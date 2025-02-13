@@ -1,0 +1,36 @@
+.footer {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.footer-content p:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.footer-content p:nth-child(3) {
+    animation-delay: 4s;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

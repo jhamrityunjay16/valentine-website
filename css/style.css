@@ -1,0 +1,570 @@
+body {
+    margin: 0;
+    background: #ffe5ec;
+}
+
+/* HERO SECTION */
+.hero {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* CAROUSEL IMAGES */
+.carousel-item img {
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* OVERLAY TEXT */
+.carousel-caption {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    /* transform: translateX(-40%); */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.carousel-caption h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* COUNTER SECTION */
+.counter-section {
+    background: #ffe5ec; /* Soft pink */
+    text-align: center;
+    padding: 60px ;
+    /* font-family: 'Arial', sans-serif; */
+    display: flex;
+    justify-content: center;
+}
+
+/* Flexbox for positioning */
+.counter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 900px;
+    width: 100%;
+    gap: 50px;
+}
+
+/* Left side text */
+.counter-text {
+    text-align: left;
+    max-width: 300px;
+}
+
+.counter-text h2 {
+    font-size: 30px;
+    color: #d6336c;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.counter-text p {
+    font-size: 18px;
+    color: #7d143a;
+    font-style: italic;
+}
+
+/* Right side counter box */
+.counter-box {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #d6336c;
+    padding: 20px ;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Each counter item */
+.counter-item {
+    text-align: center;
+    font-weight: bold;
+    min-width: 80px;
+}
+
+.counter-item span {
+    font-size: 30px;
+    display: block;
+}
+
+.counter-item small {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffe5ec;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TIMELINE STYLING */
+#floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: floatUp 4s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+#timeline {
+    background: #ffe5ec;
+    /* padding: 60px 20px; */
+    text-align: center;
+}
+
+.timeline-heading {
+    font-size: 36px;
+    color: #d6336c;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-content {
+    width: 45%;
+    background: #d6336c;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.timeline-content p {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.timeline-img {
+    width: 45%;
+}
+
+.timeline-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Dotted Line Effect */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background: #d6336c;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Alternating Layout */
+.left {
+    text-align: right;
+}
+
+.right {
+    text-align: left;
+}
+
+/* TIMELINE ANIMATION */
+.timeline-item {
+    opacity: 0;
+    transform: translateX(-50px); /* Start slightly off-screen */
+    transition: all 0.8s ease-in-out;
+}
+
+.timeline-item:nth-child(even) {
+    transform: translateX(50px); /* Alternate direction */
+}
+
+/* When the item is in viewport */
+.timeline-item.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .timeline-content,
+    .timeline-img {
+        width: 90%;
+        text-align: center;
+    }
+
+    .left,
+    .right {
+        text-align: center;
+    }
+
+    .timeline-container::before {
+        left: 20px;
+    }
+}
+
+#gift-box-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Heading */
+.gift-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff4d6d;
+   
+}
+
+/* Gift Box Container */
+.gift-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding: 50px 20px;
+
+}
+
+/* Gift Box */
+.gift-box {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    background: #ff4d6d;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    animation: shake 1.5s infinite ease-in-out;
+    
+}
+
+/* Gift Lid */
+.gift-box .lid {
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    background: #d43f5c;
+    top: -25px;
+    left: -5px;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Gift Box Ribbon */
+.gift-box .ribbon {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: white;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* Hover Effect */
+.gift-box:hover {
+    transform: scale(1.1);
+}
+
+/* Shaking Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px) rotate(-2deg); }
+    40% { transform: translateX(2px) rotate(2deg); }
+    60% { transform: translateX(-2px) rotate(-2deg); }
+    80% { transform: translateX(2px) rotate(2deg); }
+}
+
+/* Open Gift Box Effect */
+.open .lid {
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+/* POPUP BACKGROUND */
+.gift-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* POPUP CONTENT */
+.gift-popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Show animation */
+.gift-popup.show {
+    display: flex;
+}
+
+.gift-popup-content.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Close Button */
+.close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff4d6d;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+/* Surprise Message */
+.message {
+    font-size: 1.2rem;
+    color: #ff4d6d;
+}
+
+/* Cute Doodle */
+.doodle {
+    width: 80%;
+    border-radius: 30px;
+    margin: 10px 0;
+}
+
+/* Playlist */
+.playlist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.playlist li {
+    margin: 5px 0;
+}
+
+.playlist a {
+    text-decoration: none;
+    color: #ff4d6d;
+    font-weight: bold;
+}
+
+/* Starry Night Section */
+#starry-night {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+}
+
+/* Starry Background */
+#starCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Floating Constellation Names */
+.constellation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.name {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    animation: float 4s infinite ease-in-out alternate;
+}
+
+/* Floating Effect */
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Blush Section Layout (Similar to Counter) */
+#blush-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Container (Mimics Counter Section Layout) */
+.blush-container {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Space between text and emoji */
+}
+
+/* Text Styling */
+.blush-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#blushMessage {
+    font-size: 24px;
+    color: #ffccd5;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Big Blush Emoji Button */
+#blushButton {
+    font-size: 80px; /* BIG emoji */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover and Click Effects */
+#blushButton:hover {
+    transform: scale(1.1);
+}
+
+#blushButton:active {
+    transform: scale(0.95);
+}
+/* Styling for Blush-O-Space Title */
+.blush-text h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff69b4; /* Cute pink */
+    text-shadow: 2px 2px 10px rgba(255, 105, 180, 0.5); /* Glow effect */
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s infinite alternate; /* Cute pulsating effect */
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.footer {
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.footer-content p:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.footer-content p:nth-child(3) {
+    animation-delay: 4s;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
